@@ -1,0 +1,20 @@
+// 明示しないとproto2になる
+syntax = "proto3";
+
+// protoファイルから自動生成させるgoファイルの出力先を指定
+option go_package = "pkg/grpc";
+
+package myapp;
+
+service GreetingService {
+    // サービスが持つメソッドの定義
+    rpc Hello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloResponse {
+    string message = 1;
+}
