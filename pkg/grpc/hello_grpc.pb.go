@@ -22,7 +22,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GreetingServiceClient interface {
-	// サービスが持つメソッドの定義
 	Hello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloResponse, error)
 }
 
@@ -47,7 +46,6 @@ func (c *greetingServiceClient) Hello(ctx context.Context, in *HelloRequest, opt
 // All implementations must embed UnimplementedGreetingServiceServer
 // for forward compatibility
 type GreetingServiceServer interface {
-	// サービスが持つメソッドの定義
 	Hello(context.Context, *HelloRequest) (*HelloResponse, error)
 	mustEmbedUnimplementedGreetingServiceServer()
 }
