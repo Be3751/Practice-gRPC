@@ -9,6 +9,7 @@ package myapp;
 service GreetingService {
     // サービスが持つメソッドの定義
     rpc Hello (HelloRequest) returns (HelloResponse);
+    rpc HelloServerStream (HelloRequest) returns (stream HelloResponse);
 }
 
 message HelloRequest {
